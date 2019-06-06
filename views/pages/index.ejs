@@ -1,0 +1,43 @@
+<% include ../partials/header %> 
+    <br>
+    <div class="container table-layout">
+
+        <div class="">
+            <div class="col md-12 mb-4">
+                <a href="/inventory/add" class="btn btn-success btn-lg btn-rounded">Add Item</a>
+            </div>
+        </div>
+        <% if(items.length != 0) { %>
+            <div class="col m-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Action</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% items.forEach(function(items,index){ %>
+                            <tr>
+                                    <td>      
+                                        <a href="/inventory/delete/<%= items.ID%>" class="btn btn-danger btn-rounded">Delete</a>
+                                        <a href="/inventory/edit/<%= items.ID%>" class="btn btn-primary btn-rounded">Edit</a>
+                                    </td>
+                                    <td><%= items.ID%></td>
+                                    <td><%= items.NAME%></td>
+                                    <td><%= items.QTY%></td>
+                                    <td><%= items.AMOUNT%></td>
+                                </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+                <p class="alert alert-danger" role="alert"><strong>There are no Records</strong></p>
+            <% } %>
+   
+    </div>
+<% include ../partials/footer %>

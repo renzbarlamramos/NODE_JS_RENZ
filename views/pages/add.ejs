@@ -1,0 +1,51 @@
+<% include ../partials/header %> 
+
+      <div class=" offset-1 col-md-10 mt-5">
+              <!-- Material form contact -->
+        <div class="card">
+        
+          <h5 class="card-header info-color white-text text-center py-4">
+              <a href="http://localhost:3000/" class="text-right-back">< Back</a>
+              <strong>Add Inventory</strong>
+          </h5>
+
+          <!--Card content-->
+          <div class="card-body px-lg-5 pt-0">
+
+              <!-- Form -->
+              <form action="http://localhost:3000/inventory/add" method="POST" class="col s12 p-3">
+               <input type="hidden" name="ID"/>
+                   <div class="form-group row">
+                      <label for="inputNAME" class="col-sm-2  col-form-label">Name</label>
+                      <div class="col-sm-10">
+                          <input type="text" required="required" class="form-control" maxlength="254" id="inputNAME" name="NAME" placeholder="Your Name">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputQTY" class="col-sm-2 col-form-label">Quantity</label>
+                    <div class="col-sm-10">
+                      <input type="number" required="required"  class="form-control" maxlength="7" id="inputQTY" name="QTY" placeholder="Quantity">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="inputAMOUNT" class="col-sm-2 col-form-label">Amount</label>
+                      <div class="col-sm-10">
+                          <input type="number" placeholder="0.00" step="0.001" maxlength="9" max="99999.9999" min="00000.0000" class="form-control" name="AMOUNT"
+                          id="inputAMOUNT" placeholder="Amount">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-12">
+                      <button type="submit" class="btn btn-info btn-block waves-effect waves-light btn-rounded">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              <!-- Form -->
+
+          </div>
+
+        </div>
+        <!-- Material form contact -->
+      </div>
+
+<% include ../partials/footer %>
